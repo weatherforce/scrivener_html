@@ -20,7 +20,15 @@ defmodule ScrivenerHtml.Mixfile do
       ],
       package: package(),
       deps: deps(),
-      aliases: aliases()
+      aliases: aliases(),
+      extra_applications: [:eex],
+      xref: [exclude: [
+        Plug.Conn.Query,
+        Phoenix.Naming,
+        Phoenix.HTML,
+        Phoenix.HTML.Tag,
+        Phoenix.HTML.Link
+      ]]
     ]
   end
 
